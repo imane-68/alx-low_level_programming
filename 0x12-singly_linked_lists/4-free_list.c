@@ -1,21 +1,25 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
+
 /**
-* list_len - a function that returns the number
-*  of elements in a linked list_t list
-* @h: input
-* Return: 0
-*/
-size_t list_len(const list_t *h)
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
 {
-	int len = 0;
+	list_t *head;
 
-	if (h == NULL)
-		return (0);
-
-	while (h != NULL)
-	{
-		len++;
-		h = h->next;
-	}
-	return (len);
+	head = NULL;
+	add_node_end(&head, "Bob");
+	add_node_end(&head, "&");
+	add_node_end(&head, "Kris");
+	add_node_end(&head, "love");
+	add_node_end(&head, "asm");
+	print_list(head);
+	free_list(head);
+	head = NULL;
+	return (0);
 }
